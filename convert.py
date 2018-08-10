@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 from glob import glob
+import markdown
 import re
 
 filepaths = glob('**/*.md', recursive=True)
@@ -43,15 +44,32 @@ def convert_notifications(content):
 
             content = content.replace(matched_text, replacement)
 
+    return content
 
-def convert_metadata():
+
+def convert_metadata(content):
     """
     Convert Markdown metadata (https://python-markdown.github.io/extensions/meta_data/).
 
-    "Title" will be added as a <h1>
+    "Title" will be added as a <h1>, if there isn't one already
+    "TODO" will be preserved in `<!-- -->` HTML comments
+    anything else will be ignored
     """
 
-    md = markdown.Markdown(extensions = ['markdown.extensions.meta'])
+    parser = markdown.Markdown(extensions=['markdown.extensions.meta'])
+
+    parser.convert(content)
+    title = parser.Meta.get('title', [])[0]
+    todo = "\n- ".join(parser.Meta.get('todo', []))
+    content = re.sub('^( *\w.*\n)*', '', content).lstrip()
+
+    if title and not content.startswith('# '):
+        content = f'# {title}\n\n' + content
+
+    if todo:
+        content = f"<!--\nTodo:\n- {todo}\n-->\n\n" + content
+
+    return content
 
 
 for path in filepaths:
