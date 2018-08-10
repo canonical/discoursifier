@@ -22,25 +22,31 @@ def convert_notifications(content):
     """
 
     notification_match = (
-        '!!! (Note|Warning|Positive|Negative)'
+        '!!! (Note|Warning|Positive|Negative|Important)'
         '(?: "([^:]+)")?: *\n((?:    [^\n]+\n)+)'
     )
 
     for match in re.finditer(notification_match, content):
         matched_text = match.group(0)
-        note_type = match.group(1)
+        note_type = match.group(1).lower()
         title = match.group(2)
         body = match.group(3).strip()
+
+        if note_type in ['warning', 'important']:
+            note_type = 'caution'
 
         if note_type and body:
             body = re.sub('^    ', '', body).replace('\n    ', '\n')
 
-            replacement = ""
+            options = ""
+
+            if note_type != 'note':
+                options = f"={note_type}"
 
             if title:
-                replacement = f'[{note_type}="{title}"]\n{body}\n[/{note_type}]'
-            else:
-                replacement = f'[{note_type}]\n{body}\n[/{note_type}]'
+                options = f'{options} title="{title}"'
+
+            replacement = f'[note{options}]\n{body}\n[/note]\n'
 
             content = content.replace(matched_text, replacement)
 
