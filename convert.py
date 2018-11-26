@@ -22,8 +22,8 @@ def convert_notifications(content):
     """
 
     notification_match = (
-        '!!! (Note|Warning|Positive|Negative|Important)'
-        '(?: "([^:]+)")?: *\n((?:    [^\n]+\n)+)'
+        '!!! (Note|Warning|Positive|Negative|Important|Tip)'
+        '(?: "([^"]*)")?:?(.*\n(?:    .+\n)*)'
     )
 
     for match in re.finditer(notification_match, content):
@@ -34,6 +34,9 @@ def convert_notifications(content):
 
         if note_type in ['warning', 'important']:
             note_type = 'caution'
+
+        if note_type == 'tip':
+            note_type = 'note'
 
         if note_type and body:
             body = re.sub('^    ', '', body).replace('\n    ', '\n')
@@ -65,7 +68,7 @@ def convert_metadata(content):
     parser = markdown.Markdown(extensions=['markdown.extensions.meta'])
 
     parser.convert(content)
-    title = parser.Meta.get('title', [])[0]
+    title = parser.Meta.get('title', [None])[0]
     todo = "\n- ".join(parser.Meta.get('todo', []))
     content = re.sub('^( *\w.*\n)*', '', content).lstrip()
 
