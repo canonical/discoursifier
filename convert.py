@@ -22,7 +22,7 @@ def convert_notifications(content):
     """
 
     notification_match = (
-        '!!! (Note|Warning|Positive|Negative|Important|Tip)'
+        '!!! (Note|Warning|Positive|Negative|Important|Tip|Information)'
         '(?: "([^"]*)")?:?(.*\n(?:    .+\n)*)'
     )
 
@@ -58,7 +58,8 @@ def convert_notifications(content):
 
 def convert_metadata(content):
     """
-    Convert Markdown metadata (https://python-markdown.github.io/extensions/meta_data/).
+    Convert Markdown metadata
+    (See https://python-markdown.github.io/extensions/meta_data/)
 
     "Title" will be added as a <h1>, if there isn't one already
     "TODO" will be preserved in `<!-- -->` HTML comments
