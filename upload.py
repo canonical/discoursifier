@@ -84,7 +84,7 @@ for file_path, title in paths.items():
         if response.ok:
             data = response.json()
 
-            print(f"  > Topic created, post ID: {data['id']}")
+            print(f"  > Topic {data['topic_slug']} created from {file_path}, topic ID {data['topic_id']}, post ID {data['id']}")
 
             created_topics[file_path] = {
                 'slug': data['topic_slug'],
@@ -94,15 +94,15 @@ for file_path, title in paths.items():
             }
             update_created_topics(created_topics)
         else:
-            error_message = f"  > Error {response.status_code}: {response.json()['errors']}"
-            print(error_message)
+            error_message = f"Error {response.status_code} creating topic from {file_path}: {response.json()['errors']}"
+            print(F"  > {error_message}")
             errors.append(error_message)
 
     if file_path in created_topics:
-        post_id = created_topics[file_path]['id']
+        topic_id = created_topics[file_path]['id']
 
         if created_topics[file_path]['wiki']:
-            print(f"  > Topic {post_id} already converted to wiki")
+            print(f"  > Topic {topic_id} already converted to wiki")
         else:
             wiki_response = None
 
@@ -110,9 +110,9 @@ for file_path, title in paths.items():
                 if wiki_response is not None and wiki_response.status_code == 429:
                     print(f"  > API says 'back-off': Waiting 1s for API to be ready")
                     time.sleep(1)
-                print(f"  > Trying to convert post {post_id} to Wiki")
+                print(f"  > Trying to convert topic {topic_id} to Wiki")
                 wiki_response = requests.put(
-                    f"{base_url}/posts/{post_id}/wiki",
+                    f"{base_url}/posts/{topic_id}/wiki",
                     data={
                         'api_key': args.api_key,
                         'api_username': args.api_username,
@@ -125,8 +125,8 @@ for file_path, title in paths.items():
                 created_topics[file_path]['wiki'] = True
                 update_created_topics(created_topics)
             else:
-                error_message = f"  > Error {wiki_response.status_code}: {wiki_response.json()['errors']}"
-                print(error_message)
+                error_message = f"Error {wiki_response.status_code} converting topic {topic_id} to wiki: {wiki_response.json()['errors']}"
+                print(F"  > {error_message}")
                 errors.append(error_message)
 
 
@@ -170,8 +170,8 @@ for file_path, topic_info in created_topics.items():
         created_topics[file_path]['links_updated'] = True
         update_created_topics(created_topics)
     else:
-        error_message = f"  > Error {post_response.status_code}: {post_response.json()['errors']}"
-        print(error_message)
+        error_message = f"Error {post_response.status_code} updating links in {topic_url}: {post_response.json()['errors']}"
+        print(F"  > {error_message}")
         errors.append(error_message)
 
 if errors:
