@@ -67,8 +67,8 @@ for file_path, title in paths.items():
 
         while response is None or response.status_code == 429:
             if response is not None and response.status_code == 429:
-                print(f"  > API says 'back-off': Waiting 1s for API to be ready")
-                time.sleep(1)
+                print(f"  > API says 'back-off': Waiting 5s for API to be ready")
+                time.sleep(5)
             print(f"- Trying to create topic from {file_path}")
             response = requests.post(
                 base_url + '/posts.json',
@@ -108,8 +108,8 @@ for file_path, title in paths.items():
 
             while wiki_response is None or wiki_response.status_code == 429:
                 if wiki_response is not None and wiki_response.status_code == 429:
-                    print(f"  > API says 'back-off': Waiting 1s for API to be ready")
-                    time.sleep(1)
+                    print(f"  > API says 'back-off': Waiting 5s for API to be ready")
+                    time.sleep(5)
                 print(f"  > Trying to convert topic {topic_id} to Wiki")
                 wiki_response = requests.put(
                     f"{base_url}/posts/{topic_id}/wiki",
@@ -153,8 +153,8 @@ for file_path, topic_info in created_topics.items():
 
     while post_response is None or post_response.status_code == 429:
         if post_response is not None and post_response.status_code == 429:
-            print(f"  > API says 'back-off': Waiting 1s for API to be ready")
-            time.sleep(1)
+            print(f"  > API says 'back-off': Waiting 5s for API to be ready")
+            time.sleep(5)
         print(f"  > Trying to update post {post_id}")
         post_response = requests.put(
             f"{base_url}/posts/{post_id}.json",

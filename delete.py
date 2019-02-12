@@ -40,8 +40,8 @@ while len(category_topics) > 1:
 
         while response is None or response.status_code == 429:
             if response is not None and response.status_code == 429:
-                print(f"  > API says 'back-off': Waiting 1s for API to be ready")
-                time.sleep(1)
+                print(f"  > API says 'back-off': Waiting 5s for API to be ready")
+                time.sleep(5)
             print(f"- Trying to delete topic: {topic['id']}")
             response = requests.delete(
                 f"{base_url}/t/{topic['id']}.json",
@@ -52,7 +52,7 @@ while len(category_topics) > 1:
             )
 
         if response.ok:
-            print(f"  > Deleted: {response.text}")
+            print(f"  > Deleted")
         else:
             error_message = f"Error {response.status_code} deleting topic {topic['id']}: {response.json()['errors']}"
             print(F"  > {error_message}")
