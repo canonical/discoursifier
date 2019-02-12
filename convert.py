@@ -76,7 +76,7 @@ def convert_metadata(content):
 
     title_match = re.match("^# ([^\n]+)(.*)$", content, re.DOTALL)
 
-    if title_match:
+    if title_match and len(title_match) > len(title):
         # Prefer the <h1> value to the metadata
         title = title_match.groups()[0]
         content = title_match.groups()[1].strip()
