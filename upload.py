@@ -52,7 +52,7 @@ created_topics = {}
 
 if os.path.isfile('created-topics.json'):
     with open('created-topics.json') as created_posts_file:
-        created_posts = json.load(created_posts_file)
+        created_topics = json.load(created_posts_file)
 
 for file_path, title in paths.items():
     with open(file_path) as post_content_file:
@@ -62,59 +62,73 @@ for file_path, title in paths.items():
         topic_id = created_topics[file_path]['id']
         print(f"- Topic {topic_id} already created from {file_path}")
     else:
-        print(f"- Creating topic from {file_path}")
-        response = requests.post(
-            base_url + '/posts.json',
-            data={
-                'api_key': args.api_key,
-                'api_username': args.api_username,
-                'title': title,
-                'category': category_id,
-                'raw': post_content
-            }
-        )
+        response = None
+
+        while response is not None is None or response.status_code == 429:
+            if response and response.status_code == 429:
+                print(f"  > API says 'back-off': Waiting 1s for API to be ready")
+                time.sleep(1)
+            print(f"- Trying to create topic from {file_path}")
+            response = requests.post(
+                base_url + '/posts.json',
+                data={
+                    'api_key': args.api_key,
+                    'api_username': args.api_username,
+                    'title': title,
+                    'category': category_id,
+                    'raw': post_content
+                }
+            )
 
         if response.ok:
             data = response.json()
+
+            print(f"  > Topic created, post ID: {data['id']}")
+
             created_topics[file_path] = {
                 'slug': data['topic_slug'],
                 'id': data['topic_id'],
                 'wiki': False,
                 'links_updated': False,
             }
-
-            print(f"  > Topic created, post ID: {data['id']}")
-
             update_created_topics(created_topics)
         else:
             print(f"  > Error {response.status_code}: {response.json()['errors']}")
 
+        print("  > Sleeping for 1 second to avoid API rate limits")
+        time.sleep(1)
+
     if file_path in created_topics:
-        topic_id = created_topics[file_path]['id']
+        post_id = created_topics[file_path]['id']
 
         if created_topics[file_path]['wiki']:
-            print(f"  > Topic {topic_id} already converted to wiki")
-            break
-
-        print("  > Converting to Wiki")
-        wiki_response = requests.put(
-            f"{base_url}/posts/{topic_id}/wiki",
-            data={
-                'api_key': args.api_key,
-                'api_username': args.api_username,
-                'wiki': True,
-            }
-        )
-
-        if wiki_response.ok:
-            print("  > Successfully converted")
-            created_topics[file_path]['wiki'] = True
-            update_created_topics(created_topics)
+            print(f"  > Topic {post_id} already converted to wiki")
         else:
-            print(f"  > Error {wiki_response.status_code}: {wiki_response.json()['errors']}")
+            wiki_response = None
 
-    print("  > Sleeping for 1.5 second to avoid API rate limits")
-    time.sleep(1.5)
+            while wiki_response is None or wiki_response.status_code == 429:
+                if wiki_response is not None and wiki_response.status_code == 429:
+                    print(f"  > API says 'back-off': Waiting 1s for API to be ready")
+                    time.sleep(1)
+                print(f"  > Trying to convert post {post_id} to Wiki")
+                wiki_response = requests.put(
+                    f"{base_url}/posts/{post_id}/wiki",
+                    data={
+                        'api_key': args.api_key,
+                        'api_username': args.api_username,
+                        'wiki': True,
+                    }
+                )
+
+            if wiki_response.ok:
+                print("  > Successfully converted")
+                created_topics[file_path]['wiki'] = True
+                update_created_topics(created_topics)
+            else:
+                print(f"  > Error {wiki_response.status_code}: {wiki_response.json()['errors']}")
+
+            print("  > Sleeping for 1 second to avoid API rate limits")
+            time.sleep(1)
 
 
 for file_path, topic_info in created_topics.items():
@@ -127,25 +141,30 @@ for file_path, topic_info in created_topics.items():
     print(f"- Updating links in {topic_url}")
     get_response = requests.get(f"{base_url}{topic_url}.json?include_raw=1")
     post = get_response.json()['post_stream']['posts'][0]
-    try:
-        post_content = post['raw']
-    except:
-        import ipdb; ipdb.set_trace()
+    post_content = post['raw']
     post_id = post['id']
     print(f"  > Found post ID: {post_id}")
 
     # Iterate through all created posts again, to replace links
-    for file_path, topic_url in created_topics.items():
-        post_content = re.sub(f"[./]*{file_path}", topic_url, post_content)
+    for file_path, nested_topic_info in created_topics.items():
+        nested_topic_url = f"/t/{nested_topic_info['slug']}/{nested_topic_info['id']}"
+        post_content = re.sub(f"[./]*{file_path}", nested_topic_url, post_content)
 
-    post_response = requests.put(
-        f"{base_url}/posts/{post_id}.json",
-        data={
-            'api_key': args.api_key,
-            'api_username': args.api_username,
-            'post[raw]': post_content
-        }
-    )
+    post_response = None
+
+    while post_response is None or post_response.status_code == 429:
+        if post_response is not None and post_response.status_code == 429:
+            print(f"  > API says 'back-off': Waiting 1s for API to be ready")
+            time.sleep(1)
+        print(f"  > Trying to update post {post_id}")
+        post_response = requests.put(
+            f"{base_url}/posts/{post_id}.json",
+            data={
+                'api_key': args.api_key,
+                'api_username': args.api_username,
+                'post[raw]': post_content
+            }
+        )
 
     if post_response.ok:
         print("  > Successfully updated links")
