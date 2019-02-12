@@ -24,6 +24,7 @@ parser.add_argument("--category", required=True, help=("Category for created pos
 
 args = parser.parse_args()
 base_url = args.api_url.rstrip('/')
+errors = []
 
 
 def update_created_topics(created_topics):
@@ -64,8 +65,8 @@ for file_path, title in paths.items():
     else:
         response = None
 
-        while response is not None is None or response.status_code == 429:
-            if response and response.status_code == 429:
+        while response is None or response.status_code == 429:
+            if response is not None and response.status_code == 429:
                 print(f"  > API says 'back-off': Waiting 1s for API to be ready")
                 time.sleep(1)
             print(f"- Trying to create topic from {file_path}")
@@ -93,10 +94,9 @@ for file_path, title in paths.items():
             }
             update_created_topics(created_topics)
         else:
-            print(f"  > Error {response.status_code}: {response.json()['errors']}")
-
-        print("  > Sleeping for 1 second to avoid API rate limits")
-        time.sleep(1)
+            error_message = f"  > Error {response.status_code}: {response.json()['errors']}"
+            print(error_message)
+            errors.append(error_message)
 
     if file_path in created_topics:
         post_id = created_topics[file_path]['id']
@@ -125,10 +125,9 @@ for file_path, title in paths.items():
                 created_topics[file_path]['wiki'] = True
                 update_created_topics(created_topics)
             else:
-                print(f"  > Error {wiki_response.status_code}: {wiki_response.json()['errors']}")
-
-            print("  > Sleeping for 1 second to avoid API rate limits")
-            time.sleep(1)
+                error_message = f"  > Error {wiki_response.status_code}: {wiki_response.json()['errors']}"
+                print(error_message)
+                errors.append(error_message)
 
 
 for file_path, topic_info in created_topics.items():
@@ -146,9 +145,9 @@ for file_path, topic_info in created_topics.items():
     print(f"  > Found post ID: {post_id}")
 
     # Iterate through all created posts again, to replace links
-    for file_path, nested_topic_info in created_topics.items():
+    for nested_file_path, nested_topic_info in created_topics.items():
         nested_topic_url = f"/t/{nested_topic_info['slug']}/{nested_topic_info['id']}"
-        post_content = re.sub(f"[./]*{file_path}", nested_topic_url, post_content)
+        post_content = re.sub(f"[./]*{nested_file_path}", nested_topic_url, post_content)
 
     post_response = None
 
@@ -171,4 +170,11 @@ for file_path, topic_info in created_topics.items():
         created_topics[file_path]['links_updated'] = True
         update_created_topics(created_topics)
     else:
-        print(f"  > Error {post_response.status_code}: {post_response.json()['errors']}")
+        error_message = f"  > Error {post_response.status_code}: {post_response.json()['errors']}"
+        print(error_message)
+        errors.append(error_message)
+
+if errors:
+    print("Errors:")
+    for error in errors:
+        print(error)
