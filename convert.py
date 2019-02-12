@@ -3,8 +3,9 @@
 from glob import glob
 import markdown
 import re
+import json
 
-filepaths = glob('**/*.md', recursive=True)
+filepaths = glob("**/*.md", recursive=True)
 
 
 def convert_notifications(content):
@@ -22,7 +23,7 @@ def convert_notifications(content):
     """
 
     notification_match = (
-        '!!! (Note|Warning|Positive|Negative|Important|Tip|Information)'
+        "!!! (Note|Warning|Positive|Negative|Important|Tip|Information)"
         '(?: "([^"]*)")?:?(.*\n(?:    .+\n)*)'
     )
 
@@ -32,24 +33,24 @@ def convert_notifications(content):
         title = match.group(2)
         body = match.group(3).strip()
 
-        if note_type in ['warning', 'important']:
-            note_type = 'caution'
+        if note_type in ["warning", "important"]:
+            note_type = "caution"
 
-        if note_type == 'tip':
-            note_type = 'note'
+        if note_type == "tip":
+            note_type = "note"
 
         if note_type and body:
-            body = re.sub('^    ', '', body).replace('\n    ', '\n')
+            body = re.sub("^    ", "", body).replace("\n    ", "\n")
 
             options = ""
 
-            if note_type != 'note':
+            if note_type != "note":
                 options = f"={note_type}"
 
             if title:
                 options = f'{options} title="{title}"'
 
-            replacement = f'[note{options}]\n{body}\n[/note]\n'
+            replacement = f"[note{options}]\n{body}\n[/note]\n"
 
             content = content.replace(matched_text, replacement)
 
@@ -66,28 +67,41 @@ def convert_metadata(content):
     anything else will be ignored
     """
 
-    parser = markdown.Markdown(extensions=['markdown.extensions.meta'])
+    parser = markdown.Markdown(extensions=["markdown.extensions.meta"])
 
     parser.convert(content)
-    title = parser.Meta.get('title', [None])[0]
-    todo = "\n- ".join(parser.Meta.get('todo', []))
-    content = re.sub('^( *\w.*\n)*', '', content).lstrip()
+    title = parser.Meta.get("title", [None])[0]
+    todo = "\n- ".join(parser.Meta.get("todo", []))
+    content = re.sub("^( *\w.*\n)*", "", content).lstrip()
 
-    if title and not content.startswith('# '):
-        content = f'# {title}\n\n' + content
+    title_match = re.match("^# ([^\n]+)(.*)$", content, re.DOTALL)
+
+    if title_match:
+        # Prefer the <h1> value to the metadata
+        title = title_match.groups()[0]
+        content = title_match.groups()[1].strip()
 
     if todo:
         content = f"<!--\nTodo:\n- {todo}\n-->\n\n" + content
 
-    return content
+    return title, content
 
 
+title_map = {}
+
+# Convert markdown
 for path in filepaths:
     with open(path) as file_handle:
         content = file_handle.read()
 
     content = convert_notifications(content)
-    content = convert_metadata(content)
+    title, content = convert_metadata(content)
 
-    with open(path, 'w') as file_handle:
+    title_map[path] = title
+
+    with open(path, "w") as file_handle:
         file_handle.write(content)
+
+# Write title mapping to file
+with open("title-map.json", "w") as title_map_file:
+    json.dump(title_map, title_map_file)
