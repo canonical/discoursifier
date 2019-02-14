@@ -45,10 +45,10 @@ def convert_notifications(content):
             options = ""
 
             if note_type != "note":
-                options = f"={note_type}"
+                options = f' type="{note_type}"'
 
             if title:
-                options = f'{options} title="{title}"'
+                options = f'{options} status="{title}"'
 
             replacement = f"[note{options}]\n{body}\n[/note]\n"
 
@@ -67,24 +67,25 @@ def convert_metadata(content):
     anything else will be ignored
     """
 
-    parser = markdown.Markdown(extensions=["markdown.extensions.meta"])
+    head, body = content.split('\n\n', 1)
+    body = body.strip()
 
-    parser.convert(content)
+    parser = markdown.Markdown(extensions=["markdown.extensions.meta"])
+    parser.convert(head)
     title = parser.Meta.get("title", [None])[0]
     todo = "\n- ".join(parser.Meta.get("todo", []))
-    content = re.sub("^( *\w.*\n)*", "", content).lstrip()
+    title_match = re.match("^# ([^\n]+)(.*)$", body, re.DOTALL)
 
-    title_match = re.match("^# ([^\n]+)(.*)$", content, re.DOTALL)
-
-    if title_match and len(title_match) > len(title):
-        # Prefer the <h1> value to the metadata
-        title = title_match.groups()[0]
-        content = title_match.groups()[1].strip()
+    if title_match:
+        # Prefer the longer tile
+        if title and len(title_match.groups()[0]) > len(title):
+            title = title_match.groups()[0]
+        body = title_match.groups()[1].strip()
 
     if todo:
-        content = f"<!--\nTodo:\n- {todo}\n-->\n\n" + content
+        body = f"<!--\nTodo:\n- {todo}\n-->\n\n" + body
 
-    return title, content
+    return title, body
 
 
 title_map = {}
