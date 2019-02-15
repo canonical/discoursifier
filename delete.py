@@ -40,7 +40,7 @@ while len(category_topics) > 1:
 
         while response is None or response.status_code == 429:
             if response is not None and response.status_code == 429:
-                print(f"  > API says 'back-off': Waiting 5s for API to be ready")
+                print(f"  > 429 from API, waiting 5s ('{response.json()['errors']}')")
                 time.sleep(5)
             print(f"- Trying to delete topic: {topic['id']}")
             response = requests.delete(
