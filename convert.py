@@ -8,6 +8,41 @@ import json
 filepaths = glob("**/*.md", recursive=True)
 
 
+def convert_foldouts(content):
+    body_links = content.split("<!-- LINKS -->")
+    links = ""
+
+    if len(body_links) > 1:
+        content = body_links[0]
+        links = body_links[1]
+
+    sections = re.split("(?:^|\n)\^# ", content)
+
+    new_content = ""
+
+    for index, section in enumerate(sections):
+        if index == 0:
+            new_content = section
+            continue
+
+        foldout_match = re.match(
+            "^(\w.*)\n((?: +.*\n|\n)+)((?:.|\n)*$)", section
+        )
+
+        summary = foldout_match.groups()[0]
+        foldout_body = foldout_match.groups()[1]
+        remainder = foldout_match.groups()[2]
+
+        foldout_html = markdown.markdown(foldout_body + links)
+
+        new_content += (
+            f"\n<details>\n<summary>{summary}</summary>"
+            f"\n{foldout_html}\n</details>\n{remainder}"
+        )
+
+    return new_content
+
+
 def convert_notifications(content):
     """
     Convert old-style notifications:
@@ -67,7 +102,7 @@ def convert_metadata(content):
     anything else will be ignored
     """
 
-    head, body = content.split('\n\n', 1)
+    head, body = content.split("\n\n", 1)
     body = body.strip()
 
     parser = markdown.Markdown(extensions=["markdown.extensions.meta"])
@@ -97,6 +132,7 @@ for path in filepaths:
 
     content = convert_notifications(content)
     title, content = convert_metadata(content)
+    content = convert_foldouts(content)
 
     title_map[path] = title
 
