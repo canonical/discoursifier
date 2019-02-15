@@ -7,6 +7,8 @@ import time
 # Third-party packages
 import requests
 
+# Local imports
+from discourse_api import DiscourseAPI
 
 # Arguments
 parser = argparse.ArgumentParser(
@@ -21,56 +23,23 @@ parser.add_argument(
 )
 
 args = parser.parse_args()
-base_url = args.api_url.rstrip("/")
-errors = []
 
+api = DiscourseAPI(
+    url=args.api_url.rstrip("/"),
+    username=args.api_username,
+    key=args.api_key,
+    category_name=args.category,
+)
 
-def get_category_topics():
-    category_info = requests.get(f"{base_url}/c/{args.category}/show.json")
-    category_id = category_info.json()["category"]["id"]
-    category_data = requests.get(f"{base_url}/c/{category_id}.json")
-    return category_data.json()["topic_list"]["topics"]
-
-
-category_topics = get_category_topics()
+category_topics = api.get_category_topics()
 
 while len(category_topics) > 1:
     print(f"- Deleting {len(category_topics)}")
 
     for topic in category_topics:
-        response = None
-
-        while response is None or response.status_code == 429:
-            if response is not None and response.status_code == 429:
-                print(
-                    f"  > 429 from API, waiting 5s "
-                    f"('{response.json()['errors']}')"
-                )
-                time.sleep(5)
-            print(f"- Trying to delete topic: {topic['id']}")
-            response = requests.delete(
-                f"{base_url}/t/{topic['id']}.json",
-                params={
-                    "api_key": args.api_key,
-                    "api_username": args.api_username,
-                },
-            )
-
-        if response.ok:
-            print(f"  > Deleted")
-        else:
-            error_message = (
-                f"Error {response.status_code} deleting topic "
-                f"{topic['id']}: {response.json()['errors']}"
-            )
-            print(f"  > {error_message}")
-            errors.append(error_message)
+        api.delete_topic(topic["id"])
 
     print("- Getting topics again, to check we deleted them all")
-    category_topics = get_category_topics()
+    category_topics = api.get_category_topics()
 
-
-if errors:
-    print("Errors:")
-    for error in errors:
-        print(error)
+api.print_errors()
