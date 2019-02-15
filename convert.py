@@ -49,7 +49,7 @@ def convert_notifications(content):
 
         !!! Note "title":
             this is some note contents
-    
+
     Into new style:
 
         [note="title"]
