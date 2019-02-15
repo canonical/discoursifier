@@ -169,11 +169,14 @@ for file_path, topic_info in created_topics.items():
 
     # Iterate through all created posts again, to replace links
     for nested_file_path, nested_topic_info in created_topics.items():
+        file_name = nested_file_path[:-3]
+
         nested_topic_url = (
             f"/t/{nested_topic_info['slug']}/{nested_topic_info['id']}"
         )
+
         post_content = re.sub(
-            f"[./]*{nested_file_path}", nested_topic_url, post_content
+            f"[./]*{file_name}[.](md|html)", nested_topic_url, post_content
         )
 
     post_response = None

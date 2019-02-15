@@ -141,4 +141,4 @@ for path in filepaths:
 
 # Write title mapping to file
 with open("title-map.json", "w") as title_map_file:
-    json.dump(title_map, title_map_file)
+    json.dump(title_map, title_map_file, indent=4, sort_keys=True)
