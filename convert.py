@@ -9,12 +9,12 @@ filepaths = glob("**/*.md", recursive=True)
 
 
 def convert_foldouts(content):
-    body_links = content.split("<!-- LINKS -->")
     links = ""
+    body_links = content.split("\n\n<!-- LINKS -->")
 
     if len(body_links) > 1:
         content = body_links[0]
-        links = body_links[1]
+        links = "\n\n<!-- LINKS -->" + body_links[1]
 
     sections = re.split("(?:^|\n)\^# ", content)
 
@@ -40,7 +40,7 @@ def convert_foldouts(content):
             f"\n{foldout_html}\n</details>\n{remainder}"
         )
 
-    return new_content
+    return new_content + links
 
 
 def convert_notifications(content):
