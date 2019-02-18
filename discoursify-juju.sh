@@ -6,6 +6,7 @@ set -exuo pipefail
 cd ~/git/juju-docs/src/en
 git checkout devel
 git checkout .
+git pull
 
 # Remove files we don't want to include in Discourse
 rm commands.md test.md index.md
@@ -30,7 +31,7 @@ echo "Enter the API key:"
 read api_key
 
 # Uploading
-~/git/discoursifier/upload.py --api-key=${api_key} --api-username=nottrobin --api-url=https://discourse.jujucharms.com/ --title-map=title-map.json --category=docs-import
+~/git/discoursifier/upload.py --api-key=${api_key} --api-username=system --api-url=https://discourse.jujucharms.com/ --title-map=title-map.json --category=docs-import
 
 # Go back to the original directory
 cd -
