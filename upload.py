@@ -67,7 +67,7 @@ for file_path, title in paths.items():
         print(f"- Updating topic {topic_id} with {file_path} ...")
         api.update_topic_content(topic_id, post_content)
     else:
-        print(f"- Creationg topic from {file_path} ...")
+        print(f"- Creating topic from {file_path} ...")
         response = api.create_topic(title, post_content)
 
         if response.ok:
