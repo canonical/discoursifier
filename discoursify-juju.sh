@@ -5,7 +5,7 @@ set -exuo pipefail
 # git clone https://github.com/juju/docs ~/git/juju-docs
 cd ~/git/juju-docs/src/en
 git checkout devel
-git checkout .
+git reset --hard origin/devel
 git pull
 
 # Remove files we don't want to include in Discourse
@@ -23,6 +23,9 @@ find . -name '*.md' -exec sed -i -E 's!\\(\[|\*|\^|`|_|[(]|[)]|\$|\]|#|~)!\1!g' 
 # Fix notification blocks
 find . -name '*.md' -exec sed -i -E 's!(\[note[^]]*\]) !\1\n!g' {} \;
 find . -name '*.md' -exec sed -i -E 's! \[/note\]!\n[/note]!g' {} \;
+
+# Add IDs to headings
+~/git/discoursifier/add-header-ids.py
 
 # Replace "bash" and "no-highlight" code blocks with "text" code blocks
 find . -name '*.md' -exec sed -i -E 's!``` (bash|no-highlight)!``` text!g' {} \;

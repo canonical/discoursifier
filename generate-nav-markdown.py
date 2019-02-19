@@ -23,7 +23,7 @@ nav_sections = meta['navigation']
 
 for section in nav_sections:
     if 'location' in section:
-        path = get_location(item['location'])
+        path = get_location(section['location'])
         print(f"## [{section['title']}]({path})\n")
     else:
         print(f"## {section['title']}\n")
