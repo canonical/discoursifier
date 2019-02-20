@@ -1,0 +1,1022 @@
+{
+    "about-juju.md": {
+        "id": 1032,
+        "links_updated": true,
+        "slug": "what-is-juju",
+        "wiki": true
+    },
+    "actions.md": {
+        "id": 1033,
+        "links_updated": true,
+        "slug": "working-with-actions",
+        "wiki": true
+    },
+    "applications.md": {
+        "id": 1034,
+        "links_updated": true,
+        "slug": "applications",
+        "wiki": true
+    },
+    "authors-charm-actions.md": {
+        "id": 1035,
+        "links_updated": true,
+        "slug": "implementing-actions-in-juju-charms",
+        "wiki": true
+    },
+    "authors-charm-benchmarks.md": {
+        "id": 1036,
+        "links_updated": true,
+        "slug": "benchmarking-juju-applications",
+        "wiki": true
+    },
+    "authors-charm-best-practice.md": {
+        "id": 1037,
+        "links_updated": true,
+        "slug": "best-practice-for-charm-authors",
+        "wiki": true
+    },
+    "authors-charm-components.md": {
+        "id": 1038,
+        "links_updated": true,
+        "slug": "components-of-a-charm",
+        "wiki": true
+    },
+    "authors-charm-config.md": {
+        "id": 1039,
+        "links_updated": true,
+        "slug": "creating-config-yaml-and-configuring-charms",
+        "wiki": true
+    },
+    "authors-charm-hooks.md": {
+        "id": 1040,
+        "links_updated": true,
+        "slug": "charm-hooks",
+        "wiki": true
+    },
+    "authors-charm-icon.md": {
+        "id": 1041,
+        "links_updated": true,
+        "slug": "creating-icons-for-charms",
+        "wiki": true
+    },
+    "authors-charm-leadership.md": {
+        "id": 1042,
+        "links_updated": true,
+        "slug": "implementing-leadership-in-juju-charms",
+        "wiki": true
+    },
+    "authors-charm-metadata.md": {
+        "id": 1043,
+        "links_updated": true,
+        "slug": "charm-metadata",
+        "wiki": true
+    },
+    "authors-charm-policy.md": {
+        "id": 1044,
+        "links_updated": true,
+        "slug": "charm-store-policy",
+        "wiki": true
+    },
+    "authors-charm-store.md": {
+        "id": 1045,
+        "links_updated": true,
+        "slug": "the-juju-charm-store",
+        "wiki": true
+    },
+    "authors-charm-writing.md": {
+        "id": 1046,
+        "links_updated": true,
+        "slug": "writing-your-first-juju-charm",
+        "wiki": true
+    },
+    "authors-hook-environment.md": {
+        "id": 1047,
+        "links_updated": true,
+        "slug": "the-hook-environment-hook-tools-and-how-hooks-are-run",
+        "wiki": true
+    },
+    "authors-hook-errors.md": {
+        "id": 1048,
+        "links_updated": true,
+        "slug": "dealing-with-errors-encountered-by-charm-hooks",
+        "wiki": true
+    },
+    "authors-intro.md": {
+        "id": 1049,
+        "links_updated": true,
+        "slug": "how-to-become-a-juju-charm-author",
+        "wiki": true
+    },
+    "authors-relations-in-depth.md": {
+        "id": 1050,
+        "links_updated": true,
+        "slug": "the-lifecycle-of-charm-relations",
+        "wiki": true
+    },
+    "authors-relations.md": {
+        "id": 1051,
+        "links_updated": true,
+        "slug": "implementing-relations-in-juju-charms",
+        "wiki": true
+    },
+    "authors-service-config.md": {
+        "id": 1052,
+        "links_updated": true,
+        "slug": "application-configuration",
+        "wiki": true
+    },
+    "authors-subordinate-applications.md": {
+        "id": 1053,
+        "links_updated": true,
+        "slug": "subordinate-applications",
+        "wiki": true
+    },
+    "charm-promulgation.md": {
+        "id": 1054,
+        "links_updated": true,
+        "slug": "charm-promulgation",
+        "wiki": true
+    },
+    "charm-review-process.md": {
+        "id": 1055,
+        "links_updated": true,
+        "slug": "charm-review-process",
+        "wiki": true
+    },
+    "charm-unmaintained-process.md": {
+        "id": 1056,
+        "links_updated": true,
+        "slug": "unmaintained-charms",
+        "wiki": true
+    },
+    "charms-bundles-gui.md": {
+        "id": 1057,
+        "links_updated": true,
+        "slug": "using-bundles-with-the-gui",
+        "wiki": true
+    },
+    "charms-bundles.md": {
+        "id": 1058,
+        "links_updated": true,
+        "slug": "charm-bundles",
+        "wiki": true
+    },
+    "charms-config.md": {
+        "id": 1059,
+        "links_updated": true,
+        "slug": "configuring-applications",
+        "wiki": true
+    },
+    "charms-constraints.md": {
+        "id": 1060,
+        "links_updated": true,
+        "slug": "using-constraints",
+        "wiki": true
+    },
+    "charms-deploying-advanced.md": {
+        "id": 1061,
+        "links_updated": true,
+        "slug": "deploying-applications-advanced",
+        "wiki": true
+    },
+    "charms-deploying.md": {
+        "id": 1062,
+        "links_updated": true,
+        "slug": "deploying-applications",
+        "wiki": true
+    },
+    "charms-destroy.md": {
+        "id": 1063,
+        "links_updated": true,
+        "slug": "removing-things",
+        "wiki": true
+    },
+    "charms-fan-aws-vpc.md": {
+        "id": 1064,
+        "links_updated": true,
+        "slug": "creating-an-aws-vpc",
+        "wiki": true
+    },
+    "charms-fan.md": {
+        "id": 1065,
+        "links_updated": true,
+        "slug": "fan-container-networking",
+        "wiki": true
+    },
+    "charms-ha.md": {
+        "id": 1066,
+        "links_updated": true,
+        "slug": "application-high-availability",
+        "wiki": true
+    },
+    "charms-metrics.md": {
+        "id": 1067,
+        "links_updated": true,
+        "slug": "application-metrics",
+        "wiki": true
+    },
+    "charms-offline-config.md": {
+        "id": 1068,
+        "links_updated": true,
+        "slug": "configuring-juju-for-offline-usage",
+        "wiki": true
+    },
+    "charms-offline-deploying.md": {
+        "id": 1069,
+        "links_updated": true,
+        "slug": "deploying-charms-offline",
+        "wiki": true
+    },
+    "charms-offline-lxd.md": {
+        "id": 1070,
+        "links_updated": true,
+        "slug": "using-the-localhost-cloud-offline",
+        "wiki": true
+    },
+    "charms-offline-strategies.md": {
+        "id": 1071,
+        "links_updated": true,
+        "slug": "offline-mode-strategies",
+        "wiki": true
+    },
+    "charms-offline.md": {
+        "id": 1072,
+        "links_updated": true,
+        "slug": "working-offline",
+        "wiki": true
+    },
+    "charms-relations.md": {
+        "id": 1073,
+        "links_updated": true,
+        "slug": "managing-relations",
+        "wiki": true
+    },
+    "charms-resources.md": {
+        "id": 1074,
+        "links_updated": true,
+        "slug": "juju-resources",
+        "wiki": true
+    },
+    "charms-scaling.md": {
+        "id": 1075,
+        "links_updated": true,
+        "slug": "scaling-applications",
+        "wiki": true
+    },
+    "charms-service-groups.md": {
+        "id": 1076,
+        "links_updated": true,
+        "slug": "application-groups",
+        "wiki": true
+    },
+    "charms-storage-ceph.md": {
+        "id": 1077,
+        "links_updated": true,
+        "slug": "installing-ceph",
+        "wiki": true
+    },
+    "charms-storage-k8s.md": {
+        "id": 1078,
+        "links_updated": true,
+        "slug": "persistent-storage-and-kubernetes",
+        "wiki": true
+    },
+    "charms-storage.md": {
+        "id": 1079,
+        "links_updated": true,
+        "slug": "using-juju-storage",
+        "wiki": true
+    },
+    "charms-upgrading.md": {
+        "id": 1080,
+        "links_updated": true,
+        "slug": "upgrading-applications",
+        "wiki": true
+    },
+    "charms-working-with-units.md": {
+        "id": 1081,
+        "links_updated": true,
+        "slug": "working-with-units",
+        "wiki": true
+    },
+    "charms.md": {
+        "id": 1082,
+        "links_updated": true,
+        "slug": "charms",
+        "wiki": true
+    },
+    "client.md": {
+        "id": 1083,
+        "links_updated": true,
+        "slug": "client",
+        "wiki": true
+    },
+    "clouds-aws.md": {
+        "id": 1084,
+        "links_updated": true,
+        "slug": "using-amazon-aws-with-juju",
+        "wiki": true
+    },
+    "clouds-azure-advanced.md": {
+        "id": 1085,
+        "links_updated": true,
+        "slug": "using-microsoft-azure-with-juju-advanced",
+        "wiki": true
+    },
+    "clouds-azure.md": {
+        "id": 1086,
+        "links_updated": true,
+        "slug": "using-microsoft-azure-with-juju",
+        "wiki": true
+    },
+    "clouds-gce.md": {
+        "id": 1088,
+        "links_updated": true,
+        "slug": "using-google-gce-with-juju",
+        "wiki": true
+    },
+    "clouds-joyent.md": {
+        "id": 1089,
+        "links_updated": true,
+        "slug": "using-joyent-with-juju",
+        "wiki": true
+    },
+    "clouds-k8s.md": {
+        "id": 1090,
+        "links_updated": true,
+        "slug": "using-kubernetes-with-juju",
+        "wiki": true
+    },
+    "clouds-lxd-advanced.md": {
+        "id": 1091,
+        "links_updated": true,
+        "slug": "using-lxd-with-juju-advanced",
+        "wiki": true
+    },
+    "clouds-lxd-resources.md": {
+        "id": 1092,
+        "links_updated": true,
+        "slug": "additional-lxd-resources",
+        "wiki": true
+    },
+    "clouds-lxd.md": {
+        "id": 1093,
+        "links_updated": true,
+        "slug": "using-lxd-with-juju",
+        "wiki": true
+    },
+    "clouds-maas.md": {
+        "id": 1094,
+        "links_updated": true,
+        "slug": "using-maas-with-juju",
+        "wiki": true
+    },
+    "clouds-manual.md": {
+        "id": 1095,
+        "links_updated": true,
+        "slug": "using-the-manual-cloud-with-juju",
+        "wiki": true
+    },
+    "clouds-oci.md": {
+        "id": 1096,
+        "links_updated": true,
+        "slug": "using-oracle-oci-with-juju",
+        "wiki": true
+    },
+    "clouds-openstack.md": {
+        "id": 1097,
+        "links_updated": true,
+        "slug": "using-openstack-with-juju",
+        "wiki": true
+    },
+    "clouds-rackspace.md": {
+        "id": 1098,
+        "links_updated": true,
+        "slug": "using-rackspace-with-juju",
+        "wiki": true
+    },
+    "clouds-vsphere.md": {
+        "id": 1099,
+        "links_updated": true,
+        "slug": "using-vmware-vsphere-with-juju",
+        "wiki": true
+    },
+    "clouds.md": {
+        "id": 1100,
+        "links_updated": true,
+        "slug": "clouds",
+        "wiki": true
+    },
+    "command-changes.md": {
+        "id": 1101,
+        "links_updated": true,
+        "slug": "command-changes-from-1-25-to-2-0",
+        "wiki": true
+    },
+    "config-tagging.md": {
+        "id": 1102,
+        "links_updated": true,
+        "slug": "instance-naming-and-tagging-in-clouds",
+        "wiki": true
+    },
+    "contact-us.md": {
+        "id": 1103,
+        "links_updated": true,
+        "slug": "contact-us",
+        "wiki": true
+    },
+    "contributing-en-GB.md": {
+        "id": 1104,
+        "links_updated": true,
+        "slug": "language-details-contributing-to-juju-docs",
+        "wiki": true
+    },
+    "contributing.md": {
+        "id": 1105,
+        "links_updated": true,
+        "slug": "writing-guide",
+        "wiki": true
+    },
+    "controllers-backup.md": {
+        "id": 1106,
+        "links_updated": true,
+        "slug": "controller-backups",
+        "wiki": true
+    },
+    "controllers-config.md": {
+        "id": 1107,
+        "links_updated": true,
+        "slug": "configuring-controllers",
+        "wiki": true
+    },
+    "controllers-creating.md": {
+        "id": 1108,
+        "links_updated": true,
+        "slug": "creating-a-controller",
+        "wiki": true
+    },
+    "controllers-gui.md": {
+        "id": 1109,
+        "links_updated": true,
+        "slug": "juju-gui",
+        "wiki": true
+    },
+    "controllers-ha.md": {
+        "id": 1110,
+        "links_updated": true,
+        "slug": "controller-high-availability",
+        "wiki": true
+    },
+    "controllers.md": {
+        "id": 1111,
+        "links_updated": true,
+        "slug": "controllers",
+        "wiki": true
+    },
+    "credentials.md": {
+        "id": 1112,
+        "links_updated": true,
+        "slug": "credentials",
+        "wiki": true
+    },
+    "developer-actions.md": {
+        "id": 1113,
+        "links_updated": true,
+        "slug": "actions-for-the-charm-author",
+        "wiki": true
+    },
+    "developer-debug-dhx.md": {
+        "id": 1114,
+        "links_updated": true,
+        "slug": "dhx-a-customized-hook-debugging-environment-plugin",
+        "wiki": true
+    },
+    "developer-debug-layers.md": {
+        "id": 1115,
+        "links_updated": true,
+        "slug": "debugging-building-layers",
+        "wiki": true
+    },
+    "developer-debugging.md": {
+        "id": 1116,
+        "links_updated": true,
+        "slug": "debugging-charm-hooks",
+        "wiki": true
+    },
+    "developer-event-cycle.md": {
+        "id": 1117,
+        "links_updated": true,
+        "slug": "event-cycle",
+        "wiki": true
+    },
+    "developer-getting-started.md": {
+        "id": 1118,
+        "links_updated": true,
+        "slug": "getting-started-with-charm-development",
+        "wiki": true
+    },
+    "developer-howto.md": {
+        "id": 1119,
+        "links_updated": true,
+        "slug": "developer-how-to",
+        "wiki": true
+    },
+    "developer-layer-example.md": {
+        "id": 1120,
+        "links_updated": true,
+        "slug": "writing-a-layer-by-example",
+        "wiki": true
+    },
+    "developer-layers-interfaces.md": {
+        "id": 1121,
+        "links_updated": true,
+        "slug": "interface-layers",
+        "wiki": true
+    },
+    "developer-layers.md": {
+        "id": 1122,
+        "links_updated": true,
+        "slug": "layers-for-charm-authoring",
+        "wiki": true
+    },
+    "developer-leadership-howtos.md": {
+        "id": 1123,
+        "links_updated": true,
+        "slug": "leadership-howtos",
+        "wiki": true
+    },
+    "developer-leadership.md": {
+        "id": 1124,
+        "links_updated": true,
+        "slug": "implementing-leadership",
+        "wiki": true
+    },
+    "developer-metrics.md": {
+        "id": 1125,
+        "links_updated": true,
+        "slug": "metric-collecting-charms",
+        "wiki": true
+    },
+    "developer-network-primitives.md": {
+        "id": 1126,
+        "links_updated": true,
+        "slug": "charm-network-primitives",
+        "wiki": true
+    },
+    "developer-resources.md": {
+        "id": 1127,
+        "links_updated": true,
+        "slug": "using-resources-developer-guide",
+        "wiki": true
+    },
+    "developer-storage.md": {
+        "id": 1128,
+        "links_updated": true,
+        "slug": "writing-charms-that-use-storage",
+        "wiki": true
+    },
+    "developer-terms.md": {
+        "id": 1129,
+        "links_updated": true,
+        "slug": "writing-charms-that-use-terms",
+        "wiki": true
+    },
+    "developer-testing.md": {
+        "id": 1130,
+        "links_updated": true,
+        "slug": "writing-charm-tests",
+        "wiki": true
+    },
+    "developer-upgrade-charm.md": {
+        "id": 1131,
+        "links_updated": true,
+        "slug": "upgrading-a-charm",
+        "wiki": true
+    },
+    "experts-sla.md": {
+        "id": 1132,
+        "links_updated": true,
+        "slug": "managed-solutions",
+        "wiki": true
+    },
+    "getting-started-keygen-win.md": {
+        "id": 1133,
+        "links_updated": true,
+        "slug": "creating-ssh-keypairs-on-windows",
+        "wiki": true
+    },
+    "getting-started.md": {
+        "id": 1134,
+        "links_updated": true,
+        "slug": "getting-started-with-juju",
+        "wiki": true
+    },
+    "howto-charm-with-docker.md": {
+        "id": 1135,
+        "links_updated": true,
+        "slug": "using-docker-in-charms",
+        "wiki": true
+    },
+    "howto-harvesting.md": {
+        "id": 1136,
+        "links_updated": true,
+        "slug": "juju-and-machine-utilization",
+        "wiki": true
+    },
+    "howto-privatecloud.md": {
+        "id": 1137,
+        "links_updated": true,
+        "slug": "cloud-image-metadata",
+        "wiki": true
+    },
+    "howto-prometheus.md": {
+        "id": 1138,
+        "links_updated": true,
+        "slug": "collecting-juju-metrics",
+        "wiki": true
+    },
+    "interface-mysql.md": {
+        "id": 1139,
+        "links_updated": true,
+        "slug": "charms-and-mysql-interfaces",
+        "wiki": true
+    },
+    "introducing-2.md": {
+        "id": 1140,
+        "links_updated": true,
+        "slug": "introducing-juju-2-0",
+        "wiki": true
+    },
+    "juju-block.md": {
+        "id": 1141,
+        "links_updated": true,
+        "slug": "disabling-commands",
+        "wiki": true
+    },
+    "juju-centos.md": {
+        "id": 1142,
+        "links_updated": true,
+        "slug": "juju-support-for-centos7",
+        "wiki": true
+    },
+    "juju-coexist.md": {
+        "id": 1143,
+        "links_updated": true,
+        "slug": "running-multiple-versions-of-juju",
+        "wiki": true
+    },
+    "juju-concepts.md": {
+        "id": 1144,
+        "links_updated": true,
+        "slug": "concepts-and-terms",
+        "wiki": true
+    },
+    "juju-plugins.md": {
+        "id": 1145,
+        "links_updated": true,
+        "slug": "juju-plugins",
+        "wiki": true
+    },
+    "machine-auth.md": {
+        "id": 1146,
+        "links_updated": true,
+        "slug": "machine-authentication",
+        "wiki": true
+    },
+    "models-adding.md": {
+        "id": 1147,
+        "links_updated": true,
+        "slug": "adding-a-model",
+        "wiki": true
+    },
+    "models-cmr-scene-1.md": {
+        "id": 1148,
+        "links_updated": true,
+        "slug": "cmr-scenario-1",
+        "wiki": true
+    },
+    "models-cmr-scene-2.md": {
+        "id": 1149,
+        "links_updated": true,
+        "slug": "cmr-scenario-2",
+        "wiki": true
+    },
+    "models-cmr.md": {
+        "id": 1150,
+        "links_updated": true,
+        "slug": "cross-model-relations",
+        "wiki": true
+    },
+    "models-config.md": {
+        "id": 1151,
+        "links_updated": true,
+        "slug": "configuring-models",
+        "wiki": true
+    },
+    "models-migrate.md": {
+        "id": 1152,
+        "links_updated": true,
+        "slug": "migrating-models",
+        "wiki": true
+    },
+    "models-upgrade-notes.md": {
+        "id": 1153,
+        "links_updated": true,
+        "slug": "notes-on-upgrading-juju-software",
+        "wiki": true
+    },
+    "models-upgrade.md": {
+        "id": 1154,
+        "links_updated": true,
+        "slug": "upgrading-models",
+        "wiki": true
+    },
+    "models.md": {
+        "id": 1155,
+        "links_updated": true,
+        "slug": "models",
+        "wiki": true
+    },
+    "multiuser.md": {
+        "id": 1156,
+        "links_updated": true,
+        "slug": "working-with-multiple-users",
+        "wiki": true
+    },
+    "network-spaces.md": {
+        "id": 1157,
+        "links_updated": true,
+        "slug": "network-spaces",
+        "wiki": true
+    },
+    "reference-bundle.md": {
+        "id": 1158,
+        "links_updated": true,
+        "slug": "bundle-reference",
+        "wiki": true
+    },
+    "reference-charm-hooks.md": {
+        "id": 1159,
+        "links_updated": true,
+        "slug": "charm-hooks-reference",
+        "wiki": true
+    },
+    "reference-constraints.md": {
+        "id": 1160,
+        "links_updated": true,
+        "slug": "juju-constraints",
+        "wiki": true
+    },
+    "reference-documents.md": {
+        "id": 1161,
+        "links_updated": true,
+        "slug": "reference-documents",
+        "wiki": true
+    },
+    "reference-environment-variables.md": {
+        "id": 1162,
+        "links_updated": true,
+        "slug": "juju-environment-variables",
+        "wiki": true
+    },
+    "reference-hook-tools.md": {
+        "id": 1163,
+        "links_updated": true,
+        "slug": "hook-tools",
+        "wiki": true
+    },
+    "reference-install.md": {
+        "id": 1164,
+        "links_updated": true,
+        "slug": "installing-juju",
+        "wiki": true
+    },
+    "reference-layer-yaml.md": {
+        "id": 1165,
+        "links_updated": true,
+        "slug": "charm-layer-yaml-reference",
+        "wiki": true
+    },
+    "reference-release-notes.md": {
+        "id": 1166,
+        "links_updated": true,
+        "slug": "release-notes",
+        "wiki": true
+    },
+    "reference-reviewers.md": {
+        "id": 1167,
+        "links_updated": true,
+        "slug": "reviewing-charms-and-bundles",
+        "wiki": true
+    },
+    "reference-status.md": {
+        "id": 1168,
+        "links_updated": true,
+        "slug": "charm-unit-status-and-their-meanings",
+        "wiki": true
+    },
+    "release-notes-2.4.0.md": {
+        "id": 1169,
+        "links_updated": true,
+        "slug": "2-4-0-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.4.1.md": {
+        "id": 1170,
+        "links_updated": true,
+        "slug": "2-4-1-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.4.2.md": {
+        "id": 1171,
+        "links_updated": true,
+        "slug": "2-4-2-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.4.3.md": {
+        "id": 1172,
+        "links_updated": true,
+        "slug": "2-4-3-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.4.4.md": {
+        "id": 1173,
+        "links_updated": true,
+        "slug": "2-4-4-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.4.5.md": {
+        "id": 1174,
+        "links_updated": true,
+        "slug": "2-4-5-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.4.6.md": {
+        "id": 1175,
+        "links_updated": true,
+        "slug": "2-4-6-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.4.7.md": {
+        "id": 1176,
+        "links_updated": true,
+        "slug": "2-4-7-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.5.0.md": {
+        "id": 1177,
+        "links_updated": true,
+        "slug": "2-5-0-release-notes",
+        "wiki": true
+    },
+    "release-notes-2.5.1.md": {
+        "id": 1178,
+        "links_updated": true,
+        "slug": "2-5-1-release-notes",
+        "wiki": true
+    },
+    "snaps-offline-installing.md": {
+        "id": 1179,
+        "links_updated": true,
+        "slug": "installing-snaps-offline",
+        "wiki": true
+    },
+    "tools-charm-tools.md": {
+        "id": 1180,
+        "links_updated": true,
+        "slug": "charm-tools",
+        "wiki": true
+    },
+    "tools.md": {
+        "id": 1181,
+        "links_updated": true,
+        "slug": "tools",
+        "wiki": true
+    },
+    "troubleshooting-additions.md": {
+        "id": 1182,
+        "links_updated": true,
+        "slug": "troubleshooting-additions",
+        "wiki": true
+    },
+    "troubleshooting-clouds.md": {
+        "id": 1183,
+        "links_updated": true,
+        "slug": "troubleshooting-clouds",
+        "wiki": true
+    },
+    "troubleshooting-logs.md": {
+        "id": 1184,
+        "links_updated": true,
+        "slug": "juju-logs",
+        "wiki": true
+    },
+    "troubleshooting-removals.md": {
+        "id": 1185,
+        "links_updated": true,
+        "slug": "troubleshooting-removals",
+        "wiki": true
+    },
+    "troubleshooting-upgrade.md": {
+        "id": 1186,
+        "links_updated": true,
+        "slug": "troubleshooting-model-upgrades",
+        "wiki": true
+    },
+    "troubleshooting.md": {
+        "id": 1187,
+        "links_updated": true,
+        "slug": "troubleshooting",
+        "wiki": true
+    },
+    "tut-charms.md": {
+        "id": 1188,
+        "links_updated": true,
+        "slug": "introduction-to-juju-charms",
+        "wiki": true
+    },
+    "tut-google.md": {
+        "id": 1189,
+        "links_updated": true,
+        "slug": "create-a-google-compute-engine-controller",
+        "wiki": true
+    },
+    "tut-users.md": {
+        "id": 1190,
+        "links_updated": true,
+        "slug": "a-multi-user-cloud",
+        "wiki": true
+    },
+    "tutorial-client-basic.md": {
+        "id": 1191,
+        "links_updated": true,
+        "slug": "basic-client-usage-tutorial",
+        "wiki": true
+    },
+    "tutorial-k8s-aws.md": {
+        "id": 1192,
+        "links_updated": true,
+        "slug": "using-the-aws-integrator-charm-tutorial",
+        "wiki": true
+    },
+    "tutorial-k8s-static-pv.md": {
+        "id": 1193,
+        "links_updated": true,
+        "slug": "setting-up-static-kubernetes-storage-tutorial",
+        "wiki": true
+    },
+    "tutorial-microk8s.md": {
+        "id": 1194,
+        "links_updated": true,
+        "slug": "using-juju-with-microk8s-tutorial",
+        "wiki": true
+    },
+    "tutorial-multiuser-basic.md": {
+        "id": 1195,
+        "links_updated": true,
+        "slug": "multi-user-basic-setup-tutorial",
+        "wiki": true
+    },
+    "tutorial-multiuser-external.md": {
+        "id": 1196,
+        "links_updated": true,
+        "slug": "multi-user-external-setup-tutorial",
+        "wiki": true
+    },
+    "tutorials.md": {
+        "id": 1197,
+        "links_updated": true,
+        "slug": "tutorials",
+        "wiki": true
+    },
+    "upgrade-series.md": {
+        "id": 1198,
+        "links_updated": true,
+        "slug": "upgrading-a-machine-series",
+        "wiki": true
+    },
+    "upgrading.md": {
+        "id": 1199,
+        "links_updated": true,
+        "slug": "upgrading",
+        "wiki": true
+    },
+    "users-sample-commands.md": {
+        "id": 1200,
+        "links_updated": true,
+        "slug": "sample-command-usage-and-output-interpretation",
+        "wiki": true
+    },
+    "users.md": {
+        "id": 1201,
+        "links_updated": true,
+        "slug": "user-types-and-abilities",
+        "wiki": true
+    },
+    "whats-new.md": {
+        "id": 1202,
+        "links_updated": true,
+        "slug": "whats-new-in-2-5",
+        "wiki": true
+    }
+}

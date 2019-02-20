@@ -104,7 +104,7 @@ for file_path, topic_info in created_topics.items():
             f"/t/{nested_topic_info['slug']}/{nested_topic_info['id']}"
         )
         markdown = re.sub(
-            f"([ (])[\./]*{file_name}[.](md|html)",
+            f"([ (]|href=\")[\./]*{file_name}[.](md|html)",
             f"\\1{nested_topic_url}",
             markdown
         )

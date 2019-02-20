@@ -30,11 +30,18 @@ find . -name '*.md' -exec sed -i -E 's! \[/note\]!\n[/note]!g' {} \;
 # Replace "bash" and "no-highlight" code blocks with "text" code blocks
 find . -name '*.md' -exec sed -i -E 's!``` (bash|no-highlight)!``` text!g' {} \;
 
-echo "Enter the API key:"
-read api_key
+if [ -z "${JUJU_DISCOURSE_API_KEY:-}" ]; then
+    echo "Enter the API key:"
+    read JUJU_DISCOURSE_API_KEY
+fi
+
+echo "Ready to upload? Y/n:"
+read ready
 
 # Uploading
-~/git/discoursifier/upload.py --api-key=${api_key} --api-username=system --api-url=https://discourse.jujucharms.com/ --title-map=title-map.json --category=docs-import
+if [ "${ready,,}" == "y" ]; then
+    ~/git/discoursifier/upload.py --api-key=${JUJU_DISCOURSE_API_KEY} --api-username=system --api-url=https://discourse.jujucharms.com/ --title-map=title-map.json --category=docs-import
+fi
 
 # Go back to the original directory
 cd -
