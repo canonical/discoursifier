@@ -27,10 +27,13 @@ for path in filepaths:
             elem = "h4"
             heading_body = heading[5:]
 
-        heading_slug = heading_body.replace(" ", "-").replace('`', '').lower()
+        heading_slug = heading_body.replace(" ", "-").replace("`", "").lower()
         heading_html = f'<{elem} id="{heading_slug}">{heading_body}</{elem}>'
         content = re.sub(
-            f"^{heading}$", heading_html, content, flags=re.MULTILINE
+            f"^{re.escape(heading)}$",
+            heading_html,
+            content,
+            flags=re.MULTILINE,
         )
 
     with open(path, "w") as write_handle:
