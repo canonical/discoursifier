@@ -1,7 +1,32 @@
-#! /usr/bin/env python3
-
-import yaml
+# Standard library
 import json
+import os
+
+
+def get_created_topics():
+    """
+    Retrieve a dictionary from the created-topics.json file
+    """
+
+    created_topics = {}
+
+    if os.path.isfile("created-topics.json"):
+        with open("created-topics.json") as created_posts_file:
+            created_topics = json.load(created_posts_file)
+
+    return created_topics
+
+
+def save_created_topics(created_topics):
+    """
+    Update created-topics.json with a new dictionary
+    """
+
+    with open("created-topics.json", "w") as created_topics_file:
+        json.dump(
+            created_topics, created_topics_file, indent=4, sort_keys=True
+        )
+        print("  > Saved to created-topics.json")
 
 
 def generate_nav_markdown(sections, topics):
@@ -38,18 +63,3 @@ def generate_nav_markdown(sections, topics):
             nav_markdown += "\n"
 
     return nav_markdown
-
-
-with open("created-topics.json") as topics_file:
-    topics = json.load(topics_file)
-
-with open("metadata.yaml") as data_file:
-    meta = yaml.load(data_file)
-
-
-nav_markdown = generate_nav_markdown(
-    sections=meta["navigation"], topics=topics
-)
-
-
-print(nav_markdown)

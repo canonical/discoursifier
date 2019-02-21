@@ -3,11 +3,16 @@
 # Standard packages
 import argparse
 import json
-import os
 import re
+import yaml
 
 # Local imports
 from discourse_api import DiscourseAPI
+from helpers import (
+    generate_nav_markdown,
+    get_created_topics,
+    save_created_topics,
+)
 
 # Arguments
 parser = argparse.ArgumentParser(
@@ -32,27 +37,11 @@ api = DiscourseAPI(
 )
 
 
-def save_created_topics(created_topics):
-    """
-    Update created-topics.json with a new dictionaty
-    """
-
-    with open("created-topics.json", "w") as created_topics_file:
-        json.dump(
-            created_topics, created_topics_file, indent=4, sort_keys=True
-        )
-        print("  > Saved to created-topics.json")
-
-
 with open(args.title_map) as title_map_file:
     paths = json.load(title_map_file)
 
 # Get created topics
-created_topics = {}
-
-if os.path.isfile("created-topics.json"):
-    with open("created-topics.json") as created_posts_file:
-        created_topics = json.load(created_posts_file)
+created_topics = get_created_topics()
 
 # Create / update all topics
 # ===
@@ -94,7 +83,7 @@ for file_path, title in paths.items():
 # ===
 for file_path, topic_info in created_topics.items():
     print(f"- Updating links in topic {topic_info['id']}")
-    markdown = api.get_topic_markdown(topic_info['id'])
+    markdown = api.get_topic_markdown(topic_info["id"])
 
     # Iterate through all created posts again, to replace links for each
     for nested_file_path, nested_topic_info in created_topics.items():
@@ -104,13 +93,44 @@ for file_path, topic_info in created_topics.items():
             f"/t/{nested_topic_info['slug']}/{nested_topic_info['id']}"
         )
         markdown = re.sub(
-            f"([ (]|href=\")[\./]*{file_name}[.](md|html)",
+            f'([ (]|href=")[\./]*{file_name}[.](md|html)',
             f"\\1{nested_topic_url}",
-            markdown
+            markdown,
         )
 
-    if api.update_topic_content(topic_info['id'], markdown):
+    if api.update_topic_content(topic_info["id"], markdown):
         created_topics[file_path]["links_updated"] = True
         save_created_topics(created_topics)
 
+
+# Create / update documentation index
+# ===
+metadata_filepath = "metadata.yaml"
+
+with open(metadata_filepath) as data_file:
+    metadata = yaml.load(data_file)
+
+nav_markdown = generate_nav_markdown(
+    sections=metadata["navigation"], topics=created_topics
+)
+
+if metadata_filepath in created_topics:
+    topic_id = created_topics[metadata_filepath]["id"]
+
+    api.update_topic_content(topic_id, nav_markdown)
+    print(f"- Updated documentation index in {topic_id}")
+else:
+    print(f"- Creating documentation index from {metadata_filepath} ...")
+    response = api.create_topic("Documentation index", nav_markdown)
+
+    if response.ok:
+        created_topics[metadata_filepath] = {
+            "slug": response.json()["topic_slug"],
+            "id": response.json()["topic_id"],
+            "wiki": False,
+            "links_updated": True,
+        }
+        save_created_topics(created_topics)
+
+# Print out any errors
 api.print_errors()

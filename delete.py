@@ -2,10 +2,6 @@
 
 # Standard packages
 import argparse
-import time
-
-# Third-party packages
-import requests
 
 # Local imports
 from discourse_api import DiscourseAPI
