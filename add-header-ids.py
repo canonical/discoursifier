@@ -37,14 +37,12 @@ for path in filepaths:
         old_heading_slug = (
             heading_body.replace(" ", "-").replace("`", "").lower()
         )
-        new_heading_slug = "heading--" + re.sub(
-            "[^\w-]", "", old_heading_slug
-        ).strip("-")
+        new_heading_slug = re.sub("[^\w-]", "", old_heading_slug).strip("-")
 
         heading_slugs[old_heading_slug] = new_heading_slug
 
         heading_html = (
-            f'<{elem} id="{new_heading_slug}">{heading_body}</{elem}>'
+            f'<a name="{new_heading_slug}"></a>\n{heading}'
         )
         content = re.sub(
             f"^{re.escape(heading)}$",
