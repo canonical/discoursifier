@@ -149,6 +149,12 @@
         "slug": "unmaintained-charms",
         "wiki": true
     },
+    "charm-writing.md": {
+        "id": 1260,
+        "links_updated": true,
+        "slug": "charm-writing-guide",
+        "wiki": true
+    },
     "charms-bundles-gui.md": {
         "id": 1057,
         "links_updated": true,
@@ -875,10 +881,28 @@
         "slug": "2-5-1-release-notes",
         "wiki": true
     },
+    "release-notes-2.5.2.md": {
+        "id": 1270,
+        "links_updated": true,
+        "slug": "2-5-2-release-notes",
+        "wiki": true
+    },
     "snaps-offline-installing.md": {
         "id": 1179,
         "links_updated": true,
         "slug": "installing-snaps-offline",
+        "wiki": true
+    },
+    "tools-amulet.md": {
+        "id": 1261,
+        "links_updated": true,
+        "slug": "amulet-a-juju-test-library",
+        "wiki": true
+    },
+    "tools-charm-helpers.md": {
+        "id": 1262,
+        "links_updated": true,
+        "slug": "charm-helpers",
         "wiki": true
     },
     "tools-charm-tools.md": {
@@ -957,6 +981,12 @@
         "id": 1192,
         "links_updated": true,
         "slug": "using-the-aws-integrator-charm-tutorial",
+        "wiki": true
+    },
+    "tutorial-k8s-charms.md": {
+        "id": 1263,
+        "links_updated": true,
+        "slug": "understanding-kubernetes-charms-tutorial",
         "wiki": true
     },
     "tutorial-k8s-static-pv.md": {
