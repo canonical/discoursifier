@@ -22,8 +22,10 @@ class DiscourseAPI:
         Get all topics in the chosen category
         """
 
-        category_data = requests.get(
-            f"{self.url}/c/{self.category['id']}.json"
+        category_data = self._call_api(
+            message=f"Getting category {self.category['id']}",
+            method=requests.get,
+            url_path=f"/c/{self.category['id']}.json"
         )
         return category_data.json()["topic_list"]["topics"]
 
@@ -157,7 +159,11 @@ class DiscourseAPI:
         Given a topic ID, get the data about the first post
         """
 
-        get_response = requests.get(
-            f"{self.url}/t/{topic_id}.json?include_raw=1"
+        get_response = self._call_api(
+            message=f"Getting topic {topic_id}",
+            method=requests.get,
+            url_path=f"/t/{topic_id}.json",
+            extra_data={"include_raw": "1"},
         )
+
         return get_response.json()["post_stream"]["posts"][0]
