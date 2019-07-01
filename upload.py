@@ -19,12 +19,12 @@ parser = argparse.ArgumentParser(
     description=("Upload Markdown documents to a Discourse installation")
 )
 
-parser.add_argument("--api-username", required=True)
 parser.add_argument("--api-key", required=True)
 parser.add_argument("--api-url", required=True)
-parser.add_argument("--title-map", required=True)
+parser.add_argument("--api-username", default="system")
+parser.add_argument("--title-map", default="title-map.json")
 parser.add_argument(
-    "--category", required=True, help=("Category for created posts")
+    "--category", default="docs", help=("Category for created posts")
 )
 
 args = parser.parse_args()
