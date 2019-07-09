@@ -24,11 +24,17 @@ upload-assets --api-token XXX ../media/ > uploaded-media.json
 # Now convert all .md files, create "title-map.json", "heading-slugs.json"
 ~/Projects/discoursifier/convert.py
 
-# And upload to the Discourse
+# And upload to the Discourse, create "created-topics.json"
 ~/Projects/discoursifier/upload.py --api-url https://discourse.jujucharms.com --api-key xxxxx
 ```
 
-This should upload all items to the API.
+This should upload all items to the API, and replace all links as appropriate.
+
+Now you can generate the navigation markdown, which you should place in the index topic under a `# Navigation` heading:
+
+``` bash
+~/Projects/discoursifier/generate-nav-markdown.md  # Read metadata.yaml and generate nav markdown from it
+```
 
 You can also delete all items in a topic with:
 

@@ -36,7 +36,22 @@ def generate_nav_markdown(sections, topics):
 
                     nav_markdown += f"- [{item['title']}]({path})\n"
                 else:
-                    nav_markdown += f"- {item['title']}"
+                    nav_markdown += f"- {item['title']}\n"
+                
+                if "children" in item:
+                    for child in item["children"]:
+                        if 'location' in child:
+                            path = child["location"]
+
+                            if path in topics:
+                                topic = topics[path]
+                                path = f"/t/{topic['slug']}/{topic['id']}"
+                            
+                            nav_markdown += f"  - [{child['title']}]({path})\n"
+                        else:
+                            nav_markdown += f"  - {child['title']}\n"
+                    
+                    nav_markdown += "\n"
 
             nav_markdown += "\n"
 

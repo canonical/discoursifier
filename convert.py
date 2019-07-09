@@ -203,6 +203,9 @@ for path in filepaths:
     subprocess.check_call(
         ["sed", "-i", "-E", r"s!(\[note[^]]*\]) !\1\n!g", path]
     )
+    subprocess.check_call(
+        ["sed", "-i", "-E", r's! \[/note\]!\n[/note]!g', path]
+    )
 
 # Add header IDs
 # ===

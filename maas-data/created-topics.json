@@ -1,582 +1,594 @@
 {
     "api-authentication.md": {
-        "id": 616,
+        "id": 742,
         "links_updated": true,
         "slug": "api-authentication",
         "wiki": true
     },
     "contact-us.md": {
-        "id": 617,
+        "id": 743,
         "links_updated": true,
         "slug": "contact-us",
         "wiki": true
     },
     "contributing-build.md": {
-        "id": 618,
+        "id": 744,
         "links_updated": true,
         "slug": "building-the-docs",
         "wiki": true
     },
     "contributing-en-GB.md": {
-        "id": 619,
+        "id": 745,
         "links_updated": true,
         "slug": "language-details-contributing-to-juju-docs",
         "wiki": true
     },
     "contributing-git.md": {
-        "id": 620,
+        "id": 746,
         "links_updated": true,
         "slug": "working-with-git-and-github",
         "wiki": true
     },
     "contributing-writing.md": {
-        "id": 621,
+        "id": 747,
         "links_updated": true,
         "slug": "writing-guide",
         "wiki": true
     },
+    "index-new.md": {
+        "id": 748,
+        "links_updated": true,
+        "slug": "deleteme",
+        "wiki": true
+    },
     "installconfig-block.md": {
-        "id": 623,
+        "id": 749,
         "links_updated": true,
         "slug": "block-devices",
         "wiki": true
     },
     "installconfig-checklist.md": {
-        "id": 624,
+        "id": 750,
         "links_updated": true,
         "slug": "installation-and-configuration-checklist",
         "wiki": true
     },
     "installconfig-images-import.md": {
-        "id": 625,
+        "id": 751,
         "links_updated": true,
         "slug": "select-and-import-images",
         "wiki": true
     },
     "installconfig-images-mirror.md": {
-        "id": 626,
+        "id": 752,
         "links_updated": true,
         "slug": "local-image-mirror",
         "wiki": true
     },
     "installconfig-images-vmware.md": {
-        "id": 627,
+        "id": 753,
         "links_updated": true,
         "slug": "vmware-images",
         "wiki": true
     },
     "installconfig-images.md": {
-        "id": 628,
+        "id": 754,
         "links_updated": true,
         "slug": "images",
         "wiki": true
     },
     "installconfig-install.md": {
-        "id": 629,
+        "id": 755,
         "links_updated": true,
         "slug": "installation",
         "wiki": true
     },
     "installconfig-iso-install.md": {
-        "id": 630,
+        "id": 756,
         "links_updated": true,
         "slug": "install-from-iso",
         "wiki": true
     },
     "installconfig-lxd-install.md": {
-        "id": 631,
+        "id": 757,
         "links_updated": true,
         "slug": "install-with-lxd",
         "wiki": true
     },
     "installconfig-network-dev-discovery.md": {
-        "id": 632,
+        "id": 758,
         "links_updated": true,
         "slug": "network-discovery",
         "wiki": true
     },
     "installconfig-network-dhcp.md": {
-        "id": 633,
+        "id": 759,
         "links_updated": true,
         "slug": "dhcp",
         "wiki": true
     },
     "installconfig-network-ipranges.md": {
-        "id": 634,
+        "id": 760,
         "links_updated": true,
         "slug": "ip-ranges",
         "wiki": true
     },
     "installconfig-network-ipv6.md": {
-        "id": 635,
+        "id": 761,
         "links_updated": true,
         "slug": "ipv6",
         "wiki": true
     },
     "installconfig-network-ntp.md": {
-        "id": 636,
+        "id": 762,
         "links_updated": true,
         "slug": "ntp",
         "wiki": true
     },
     "installconfig-network-proxy.md": {
-        "id": 637,
+        "id": 763,
         "links_updated": true,
         "slug": "proxy",
         "wiki": true
     },
     "installconfig-network-ssl.md": {
-        "id": 638,
+        "id": 764,
         "links_updated": true,
         "slug": "ssl",
         "wiki": true
     },
     "installconfig-network-stp.md": {
-        "id": 639,
+        "id": 765,
         "links_updated": true,
         "slug": "stp",
         "wiki": true
     },
     "installconfig-network-subnet-management.md": {
-        "id": 640,
+        "id": 766,
         "links_updated": true,
         "slug": "subnet-management",
         "wiki": true
     },
     "installconfig-networking-config.md": {
-        "id": 641,
+        "id": 767,
         "links_updated": true,
         "slug": "configure-networking",
         "wiki": true
     },
     "installconfig-networking.md": {
-        "id": 642,
+        "id": 768,
         "links_updated": true,
         "slug": "networking",
         "wiki": true
     },
     "installconfig-package-install.md": {
-        "id": 643,
+        "id": 769,
         "links_updated": true,
         "slug": "install-from-packages",
         "wiki": true
     },
     "installconfig-partitions.md": {
-        "id": 644,
+        "id": 770,
         "links_updated": true,
         "slug": "partitions",
         "wiki": true
     },
     "installconfig-rack.md": {
-        "id": 645,
+        "id": 771,
         "links_updated": true,
         "slug": "rack-controller",
         "wiki": true
     },
     "installconfig-region.md": {
-        "id": 646,
+        "id": 772,
         "links_updated": true,
         "slug": "region-controller",
         "wiki": true
     },
     "installconfig-snap-install.md": {
-        "id": 647,
+        "id": 773,
         "links_updated": true,
         "slug": "install-from-a-snap",
         "wiki": true
     },
     "installconfig-storage-erasure.md": {
-        "id": 648,
+        "id": 774,
         "links_updated": true,
         "slug": "disk-erasure",
         "wiki": true
     },
     "installconfig-storage.md": {
-        "id": 649,
+        "id": 775,
         "links_updated": true,
         "slug": "storage",
         "wiki": true
     },
     "installconfig-syslog.md": {
-        "id": 650,
+        "id": 776,
         "links_updated": true,
         "slug": "syslog",
         "wiki": true
     },
     "installconfig-upgrade-postgres.md": {
-        "id": 651,
+        "id": 777,
         "links_updated": true,
         "slug": "upgrade-2-3-to-2-4-from-ubuntu-16-04",
         "wiki": true
     },
     "installconfig-upgrade-to-2.md": {
-        "id": 652,
+        "id": 778,
         "links_updated": true,
         "slug": "upgrade-from-1-9-to-2-x",
         "wiki": true
     },
     "installconfig-upgrade.md": {
-        "id": 653,
+        "id": 779,
         "links_updated": true,
         "slug": "upgrading-maas",
         "wiki": true
     },
     "installconfig-vmfs-datastores.md": {
-        "id": 654,
+        "id": 780,
         "links_updated": true,
         "slug": "vmware-vmfs-datastores",
         "wiki": true
     },
     "installconfig-webui-conf-journey.md": {
-        "id": 655,
+        "id": 781,
         "links_updated": true,
         "slug": "configuration-journey",
         "wiki": true
     },
     "installconfig-webui.md": {
-        "id": 656,
+        "id": 782,
         "links_updated": true,
         "slug": "web-ui",
         "wiki": true
     },
     "intro-communication.md": {
-        "id": 657,
+        "id": 783,
         "links_updated": true,
         "slug": "maas-communcation",
         "wiki": true
     },
     "intro-concepts-zones.md": {
-        "id": 658,
+        "id": 784,
         "links_updated": true,
         "slug": "zone-examples",
         "wiki": true
     },
     "intro-concepts.md": {
-        "id": 659,
+        "id": 785,
         "links_updated": true,
         "slug": "concepts-and-terms",
         "wiki": true
     },
     "intro-controllers.md": {
-        "id": 660,
+        "id": 786,
         "links_updated": true,
-        "slug": "introduction",
+        "slug": "introduction-to-controllers",
         "wiki": true
     },
     "intro-explore.md": {
-        "id": 661,
+        "id": 787,
         "links_updated": true,
         "slug": "explore-maas",
         "wiki": true
     },
     "intro-new.md": {
-        "id": 662,
+        "id": 788,
         "links_updated": true,
         "slug": "whats-new-in-2-6",
         "wiki": true
     },
     "intro-requirements.md": {
-        "id": 663,
+        "id": 789,
+        "links_updated": true,
+        "slug": "what-is-maas",
+        "wiki": true
+    },
+    "intro-what-is-maas.md": {
+        "id": 840,
         "links_updated": true,
         "slug": "what-is-maas",
         "wiki": true
     },
     "manage-account.md": {
-        "id": 664,
+        "id": 790,
         "links_updated": true,
         "slug": "user-accounts",
         "wiki": true
     },
     "manage-audit-events.md": {
-        "id": 665,
+        "id": 791,
         "links_updated": true,
         "slug": "audit-event-logs",
         "wiki": true
     },
     "manage-backup.md": {
-        "id": 666,
+        "id": 792,
         "links_updated": true,
         "slug": "backup",
         "wiki": true
     },
     "manage-cli-advanced.md": {
-        "id": 667,
+        "id": 793,
         "links_updated": true,
         "slug": "advanced-cli-tasks",
         "wiki": true
     },
     "manage-cli-common.md": {
-        "id": 668,
+        "id": 794,
         "links_updated": true,
         "slug": "common-cli-tasks",
         "wiki": true
     },
     "manage-cli-comp-hw.md": {
-        "id": 669,
+        "id": 795,
         "links_updated": true,
         "slug": "cli-composable-machines-management",
         "wiki": true
     },
     "manage-cli-dhcp-snippets.md": {
-        "id": 670,
+        "id": 796,
         "links_updated": true,
         "slug": "cli-dhcp-snippet-management",
         "wiki": true
     },
     "manage-cli-images.md": {
-        "id": 671,
+        "id": 797,
         "links_updated": true,
         "slug": "cli-image-management",
         "wiki": true
     },
     "manage-cli-interfaces.md": {
-        "id": 672,
+        "id": 798,
         "links_updated": true,
         "slug": "cli-interface-management",
         "wiki": true
     },
     "manage-cli-kernels.md": {
-        "id": 673,
+        "id": 799,
         "links_updated": true,
         "slug": "cli-kernel-management",
         "wiki": true
     },
     "manage-cli-resource-pools.md": {
-        "id": 674,
+        "id": 800,
         "links_updated": true,
         "slug": "cli-resource-pool-management",
         "wiki": true
     },
     "manage-cli-tags.md": {
-        "id": 675,
+        "id": 801,
         "links_updated": true,
         "slug": "cli-tag-management",
         "wiki": true
     },
     "manage-cli.md": {
-        "id": 676,
+        "id": 802,
         "links_updated": true,
         "slug": "maas-cli",
         "wiki": true
     },
     "manage-ha-postgresql.md": {
-        "id": 677,
+        "id": 803,
         "links_updated": true,
         "slug": "postgresql-ha-hot-standby",
         "wiki": true
     },
     "manage-ha.md": {
-        "id": 678,
+        "id": 804,
         "links_updated": true,
         "slug": "high-availability",
         "wiki": true
     },
     "manage-kvm-add-host.md": {
-        "id": 679,
+        "id": 805,
         "links_updated": true,
-        "slug": "add-a-kvm-h-ost",
+        "slug": "add-a-kvm-host",
         "wiki": true
     },
     "manage-kvm-create-vms.md": {
-        "id": 680,
+        "id": 806,
         "links_updated": true,
         "slug": "creating-and-deleting-new-vms",
         "wiki": true
     },
     "manage-kvm-host-networking.md": {
-        "id": 681,
+        "id": 807,
         "links_updated": true,
         "slug": "kvm-host-networking",
         "wiki": true
     },
     "manage-kvm-intro.md": {
-        "id": 682,
+        "id": 808,
         "links_updated": true,
         "slug": "kvm-introduction",
         "wiki": true
     },
     "manage-kvm-storage.md": {
-        "id": 683,
+        "id": 809,
         "links_updated": true,
         "slug": "kvm-host-storage-pools",
         "wiki": true
     },
     "manage-libmaas.md": {
-        "id": 684,
+        "id": 810,
         "links_updated": true,
         "slug": "api-client",
         "wiki": true
     },
     "manage-maas-security.md": {
-        "id": 685,
+        "id": 811,
         "links_updated": true,
         "slug": "maas-security",
         "wiki": true
     },
     "manage-pods-webui.md": {
-        "id": 686,
+        "id": 812,
         "links_updated": true,
         "slug": "manage-composable-machines",
         "wiki": true
     },
     "manage-prometheus-metrics.md": {
-        "id": 687,
+        "id": 813,
         "links_updated": true,
         "slug": "prometheus-metrics",
         "wiki": true
     },
     "manage-repos.md": {
-        "id": 688,
+        "id": 814,
         "links_updated": true,
         "slug": "package-repositories",
         "wiki": true
     },
     "manage-rsd-add.md": {
-        "id": 689,
+        "id": 815,
         "links_updated": true,
         "slug": "add-an-rsd-host",
         "wiki": true
     },
     "manage-rsd-create.md": {
-        "id": 690,
+        "id": 816,
         "links_updated": true,
         "slug": "creating-and-deleting-machines",
         "wiki": true
     },
     "manage-rsd-intro.md": {
-        "id": 691,
+        "id": 817,
         "links_updated": true,
         "slug": "intel-rack-scale-design-rsd-introduction",
         "wiki": true
     },
     "manage-rsd-storage.md": {
-        "id": 692,
+        "id": 818,
         "links_updated": true,
         "slug": "rsd-storage",
         "wiki": true
     },
     "manage-search.md": {
-        "id": 693,
+        "id": 819,
         "links_updated": true,
         "slug": "interactive-search",
         "wiki": true
     },
     "manage-zones.md": {
-        "id": 694,
+        "id": 820,
         "links_updated": true,
         "slug": "availability-zones",
         "wiki": true
     },
     "metadata.yaml": {
-        "id": 713,
+        "id": 839,
         "links_updated": true,
         "slug": "documentation-index",
         "wiki": false
     },
     "nodes-add.md": {
-        "id": 695,
+        "id": 821,
         "links_updated": true,
         "slug": "add-nodes",
         "wiki": true
     },
     "nodes-commission.md": {
-        "id": 696,
+        "id": 822,
         "links_updated": true,
         "slug": "commission-nodes",
         "wiki": true
     },
     "nodes-comp-hw.md": {
-        "id": 697,
+        "id": 823,
         "links_updated": true,
         "slug": "pods",
         "wiki": true
     },
     "nodes-custom.md": {
-        "id": 698,
+        "id": 824,
         "links_updated": true,
         "slug": "custom-node-setup-preseed",
         "wiki": true
     },
     "nodes-deploy.md": {
-        "id": 699,
+        "id": 825,
         "links_updated": true,
         "slug": "deploy-nodes",
         "wiki": true
     },
     "nodes-hw-testing.md": {
-        "id": 700,
+        "id": 826,
         "links_updated": true,
         "slug": "hardware-testing",
         "wiki": true
     },
     "nodes-kernel-options.md": {
-        "id": 701,
+        "id": 827,
         "links_updated": true,
         "slug": "kernel-boot-options",
         "wiki": true
     },
     "nodes-kernels.md": {
-        "id": 702,
+        "id": 828,
         "links_updated": true,
         "slug": "ubuntu-kernels",
         "wiki": true
     },
     "nodes-overview.md": {
-        "id": 703,
+        "id": 829,
         "links_updated": true,
         "slug": "node-overview",
         "wiki": true
     },
     "nodes-power-types.md": {
-        "id": 704,
+        "id": 830,
         "links_updated": true,
         "slug": "bmc-power-types",
         "wiki": true
     },
     "nodes-resource-pools.md": {
-        "id": 705,
+        "id": 831,
         "links_updated": true,
         "slug": "resource-pools",
         "wiki": true
     },
     "nodes-scripts-cli.md": {
-        "id": 706,
+        "id": 832,
         "links_updated": true,
         "slug": "cli-testing-scripts",
         "wiki": true
     },
     "nodes-scripts.md": {
-        "id": 707,
+        "id": 833,
         "links_updated": true,
         "slug": "commissioning-and-hardware-testing-scripts",
         "wiki": true
     },
     "nodes-tags.md": {
-        "id": 708,
+        "id": 834,
         "links_updated": true,
         "slug": "tags",
         "wiki": true
     },
     "release-notes-all.md": {
-        "id": 709,
+        "id": 835,
         "links_updated": true,
         "slug": "historical-release-notes",
         "wiki": true
     },
     "release-notes.md": {
-        "id": 710,
+        "id": 836,
         "links_updated": true,
         "slug": "maas-2-6-release-notes",
         "wiki": true
     },
     "troubleshoot-faq.md": {
-        "id": 711,
+        "id": 837,
         "links_updated": true,
         "slug": "troubleshooting",
         "wiki": true
     },
     "troubleshoot-getting-help.md": {
-        "id": 712,
+        "id": 838,
         "links_updated": true,
         "slug": "getting-help",
         "wiki": true
